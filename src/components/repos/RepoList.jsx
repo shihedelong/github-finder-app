@@ -1,0 +1,23 @@
+import PropTypes from 'prop-types'
+import RepoItem from './RepoItem'
+
+function RepoList({ repos }) {
+  return (
+    <div className='rounded-lg shadow-lg card bg-base-1000'>
+      <div className='card-body'>
+        <h2 className='text-3xl my-4 font-blod card-title'>
+          Latest Respositories
+        </h2>
+        {repos.map((repo) => (
+          <RepoItem key={repo.id} repo={repo}></RepoItem>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+RepoList.propTypes = {
+  repos: PropTypes.array.isRequired,
+}
+
+export default RepoList
